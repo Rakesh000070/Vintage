@@ -1,0 +1,55 @@
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+@import "tailwindcss";
+
+@theme {
+  /* Vintage Barber Color Palette */
+  --color-soft-ivory: #D8D4D1;
+  --color-warm-greige: #C8C1B7;
+  --color-mushroom-taupe: #B8AFAD;
+  --color-dusty-mauve: #958A90;
+  --color-misty-lavender: #ACA5AE;
+  --color-pearl-grey: #D2CED3;
+  --color-charcoal: #2B2B2B;
+  --color-deep-charcoal: #1E1E1E;
+  --color-gold: #C6A46A;
+
+  /* Typography */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-soft-ivory text-charcoal font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  /* Selection style */
+  ::selection {
+    @apply bg-dusty-mauve text-white;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-soft-ivory;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pearl-grey rounded-full hover:bg-mushroom-taupe transition-colors;
+  }
+}

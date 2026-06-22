@@ -1,0 +1,6 @@
+{
+  "name": "Vintage Barber",
+  "description": "A premium luxury salon website featuring cinematic branding, signature beauty services, and an editorial design aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
