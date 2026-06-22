@@ -6,6 +6,7 @@ import { ServicesSection } from "../ServicesSection";
 import { AboutSection } from "../AboutSection";
 import { TestimonialsSection } from "../TestimonialsSection";
 import { BookingSection } from "../BookingSection";
+import { BorderRotate } from "../ui/animated-gradient-border";
 
 const LUXURY_EASE_OUT = [0.25, 0.1, 0.25, 1];
 const LUXURY_EASE_ELASTIC = [0.22, 1, 0.36, 1];
@@ -144,11 +145,12 @@ export const HeroSection: React.FC = () => {
               animate="visible"
               whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
               whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
+              className="w-full sm:w-auto"
             >
               <Button 
                 variant="secondary" 
                 href="/booking"
-                className="bg-white text-charcoal px-8 md:px-11 py-4 md:py-5 text-[12px] md:text-[13px] tracking-[0.2em] uppercase rounded-sm font-medium hover:bg-[#F5F3F0] transition-colors shadow-lg shadow-white/5"
+                className="bg-white text-charcoal w-full sm:w-auto h-[52px] md:h-[60px] px-8 md:px-12 text-[12px] md:text-[13px] tracking-[0.2em] uppercase rounded-sm font-semibold hover:bg-[#F5F3F0] transition-colors shadow-lg shadow-white/5 border border-transparent"
               >
                 Book Appointment
               </Button>
@@ -159,11 +161,12 @@ export const HeroSection: React.FC = () => {
               animate="visible"
               whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
               whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
+              className="w-full sm:w-auto"
             >
               <Button 
                 variant="outline" 
                 href="/services"
-                className="border border-white/40 text-white px-8 md:px-11 py-4 md:py-5 text-[12px] md:text-[13px] tracking-[0.2em] uppercase rounded-sm font-normal hover:bg-white/10 hover:border-white transition-all"
+                className="border border-white/40 text-white w-full sm:w-auto h-[52px] md:h-[60px] px-8 md:px-12 text-[12px] md:text-[13px] tracking-[0.2em] uppercase rounded-sm font-semibold hover:bg-white/10 hover:border-white transition-all ml-0"
               >
                 Explore Services
               </Button>
@@ -250,13 +253,25 @@ export const HeroSection: React.FC = () => {
                { icon: <Crown className="text-gold w-6 h-6" />, title: "Premium Comfort", desc: "Relax in our hand-stitched leather chairs and enjoy a curated selection of fine whiskey." },
                { icon: <Compass className="text-gold w-6 h-6" />, title: "Global Standards", desc: "From London to Tokyo, we bring the world's most refined grooming standards to your doorstep." }
              ].map((highlight, i) => (
+              <BorderRotate
+                key={i}
+                animationSpeed={8}
+                borderRadius={2}
+                borderWidth={1}
+                backgroundColor="#ffffff"
+                gradientColors={{
+                  primary: '#C6A46A',
+                  secondary: '#D8D4D1',
+                  accent: '#B8AFAD'
+                }}
+                className="group w-full h-full"
+              >
                 <motion.div 
-                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="space-y-6"
+                  className="space-y-6 p-8"
                 >
                   <div className="w-12 h-12 bg-soft-ivory flex items-center justify-center rounded-sm">
                     {highlight.icon}
@@ -266,7 +281,8 @@ export const HeroSection: React.FC = () => {
                     {highlight.desc}
                   </p>
                 </motion.div>
-             ))}
+              </BorderRotate>
+            ))}
           </div>
         </div>
       </section>

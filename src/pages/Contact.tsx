@@ -1,6 +1,6 @@
 import React from "react";
 import { PageHero } from "../components/PageHero";
-import { ContactSection } from "../components/ContactSection";
+import { ContactSection } from "../components/sections/ContactSection";
 
 const Contact = () => {
   return (

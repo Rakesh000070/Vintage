@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
+import { Footer } from "./layout/Footer";
 import ScrollToTop from "./ScrollToTop";
 
 interface LayoutProps {
