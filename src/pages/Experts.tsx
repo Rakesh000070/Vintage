@@ -1,6 +1,6 @@
 import React from "react";
 import { PageHero } from "../components/PageHero";
-import { ExpertsSection } from "../components/ExpertsSection";
+import { ExpertsSection } from "../components/ui/ExpertsSection";
 
 const Experts = () => {
   return (

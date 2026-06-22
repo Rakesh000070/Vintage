@@ -2,6 +2,7 @@ import { motion, useMotionValue, useTransform, animate, useInView } from "motion
 import React, { useEffect, useRef } from "react";
 import { Button } from "./Button";
 import { slideInLeft, slideInRight, fadeUpVariant, staggerContainer } from "../animations";
+import { GlowCard } from "./ui/spotlight-card";
 
 interface StatItemProps {
   number: string;
@@ -131,14 +132,22 @@ export const AboutSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Main Image */}
-            <div className="relative z-10 aspect-[3/4] rounded-sm overflow-hidden shadow-2xl shadow-mushroom-taupe/20">
-              <img 
-                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=2070" 
-                alt="Luxury Salon Interior"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
+            {/* Main Image with GlowCard */}
+            <div className="relative z-10">
+              <GlowCard 
+                glowColor="purple" 
+                customSize 
+                className="bg-transparent border-0 rounded-sm overflow-hidden shadow-2xl shadow-mushroom-taupe/20 inline-block p-0"
+              >
+                <div className="aspect-[3/4] w-full h-full">
+                  <img 
+                    src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=2070" 
+                    alt="Luxury Salon Interior"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </GlowCard>
             </div>
 
             {/* Accent Image */}
