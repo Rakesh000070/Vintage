@@ -14,7 +14,7 @@ const About = () => {
       <PageHero 
         title="Our Story" 
         subtitle="A heritage of excellence since 1892"
-        backgroundImage="public/images/About.jpg"
+        backgroundImage="public/images/about-bg.jpg"
       />
       <AboutSection />
     </motion.div>

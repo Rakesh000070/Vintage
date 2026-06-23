@@ -24,7 +24,7 @@ const services = [
     title: "Bridal Makeup",
     description: "Complete bridal beauty packages ensuring you look flawless on your special day.",
     icon: Crown,
-    image: "public/images/Bridal-Makeup.jfif.jpeg",
+    image: "public/images/Bridal-Makeup.jpeg",
     price: "Starting at ₹5000"
   },
   {
