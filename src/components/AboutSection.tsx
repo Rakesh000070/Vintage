@@ -2,7 +2,6 @@ import { motion, useMotionValue, useTransform, animate, useInView } from "motion
 import React, { useEffect, useRef } from "react";
 import { Button } from "./Button";
 import { slideInLeft, slideInRight, fadeUpVariant, staggerContainer } from "../animations";
-import { GlowCard } from "./ui/spotlight-card";
 
 interface StatItemProps {
   number: string;

@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import { HeroSection } from "../components/sections/HeroSection";
-import { ServicesSection } from "../components/ServicesSection";
-import { AboutSection } from "../components/AboutSection";
-import { TestimonialsSection } from "../components/TestimonialsSection";
-import { BookingSectionContent as BookingSection } from "../components/BookingSection";
 
 const Home = () => {
   return (

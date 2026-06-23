@@ -2,9 +2,6 @@ import { motion, useReducedMotion } from "motion/react";
 import React, { useState, useEffect } from "react";
 import { Users, Award, Sparkles, Scissors, Crown, Compass, ArrowRight } from "lucide-react";
 import { Button } from "../Button";
-import { ServicesSection } from "../ServicesSection";
-import { AboutSection } from "../AboutSection";
-import { TestimonialsSection } from "../TestimonialsSection";
 import { BorderRotate } from "../ui/animated-gradient-border";
 
 const LUXURY_EASE_OUT = [0.25, 0.1, 0.25, 1];

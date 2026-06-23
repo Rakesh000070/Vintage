@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Preloader } from "./components/Preloader";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
 // Pages
 import Home from "./pages/Home";
