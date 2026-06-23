@@ -5,6 +5,7 @@ import { SectionHeader } from "./SectionHeader";
 import { AspectRatio } from "./ui/aspect-ratio";
 import { cn } from "../lib/utils";
 import { GlowCard } from "./ui/spotlight-card";
+import { ImageComparison } from "./ui/ImageComparison";
 
 interface GalleryItem {
   id: number;
@@ -198,28 +199,22 @@ export const GallerySection = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.96, opacity: 0, y: 20 }}
               transition={{ duration: 0.7, ease: LUXURY_EASE }}
-              className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-1 bg-charcoal shadow-2xl overflow-hidden"
+              className="max-w-4xl w-full flex flex-col bg-charcoal shadow-2xl overflow-hidden rounded-sm"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative group/modal">
-                <img src={selectedItem.before} alt="Before" className="w-full h-full object-cover aspect-[4/5]" />
-                <div className="absolute top-4 left-4 bg-black/50 text-white text-[10px] tracking-[0.3em] uppercase px-4 py-1.5 backdrop-blur-md border border-white/10">
-                  BEFORE
-                </div>
+              <div className="w-full">
+                <ImageComparison 
+                  before={selectedItem.before} 
+                  after={selectedItem.after} 
+                  aspectRatio={selectedItem.isPortrait ? 4/5 : 16/9}
+                />
               </div>
 
-              <div className="relative group/modal">
-                <img src={selectedItem.after} alt="After" className="w-full h-full object-cover aspect-[4/5]" />
-                <div className="absolute top-4 right-4 bg-dusty-mauve/80 text-white text-[10px] tracking-[0.3em] uppercase px-4 py-1.5 backdrop-blur-md">
-                  AFTER
-                </div>
-              </div>
-
-              <div className="col-span-1 md:col-span-2 bg-white p-8 text-center border-t border-soft-ivory">
+              <div className="bg-white p-6 md:p-8 text-center border-t border-soft-ivory">
                 <span className="font-body text-xs tracking-[0.3em] uppercase text-dusty-mauve block mb-2">
                   {selectedItem.category}
                 </span>
-                <h2 className="font-heading text-3xl text-charcoal">
+                <h2 className="font-heading text-2xl md:text-3xl text-charcoal">
                   {selectedItem.title}
                 </h2>
               </div>
