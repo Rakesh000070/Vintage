@@ -298,7 +298,7 @@ export const HeroSection: React.FC = () => {
              >
                 <div className="aspect-[4/5] rounded-sm overflow-hidden relative z-10 shadow-2xl">
                    <img 
-                     src="public/images/Homepage.jpeg" 
+                     src="/images/Homepage.jpeg" 
                      alt="Craftsmanship" 
                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                      referrerPolicy="no-referrer"

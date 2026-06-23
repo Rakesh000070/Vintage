@@ -10,21 +10,21 @@ const services = [
     title: "Hair Styling",
     description: "Expert cuts and styling tailored to your unique features and personal aesthetic.",
     icon: Scissors,
-    image: "public/images/hairstyle.34.37 PM.jpeg",
+    image: "/images/Hairstyle.jpeg",
     price: "Starting at ₹500"
   },
   {
     title: "Hair Coloring",
     description: "From subtle highlights to bold transformations, our color specialists create stunning results.",
     icon: Palette,
-    image: "public/images/haircoloring.34.37 PM.jpeg",
+    image: "/images/hair-coloring.jpeg",
     price: "Starting at ₹1500"
   },
   {
     title: "Bridal Makeup",
     description: "Complete bridal beauty packages ensuring you look flawless on your special day.",
     icon: Crown,
-    image: "public/images/Bridal-Makeup.jpeg",
+    image: "/images/Bridal-Makeup.jpeg",
     price: "Starting at ₹5000"
   },
   {

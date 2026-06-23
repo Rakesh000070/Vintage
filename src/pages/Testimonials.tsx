@@ -14,7 +14,7 @@ const Testimonials = () => {
       <PageHero 
         title="Client Voices" 
         subtitle="What gentlemen say about the Vintage experience"
-        backgroundImage="public/images/testimonials-bg.jpg"
+        backgroundImage="/images/testimonials-bg.jpg"
       />
       <TestimonialsSection />
     </motion.div>

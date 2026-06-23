@@ -14,7 +14,7 @@ const Contact = () => {
       <PageHero 
         title="Get In Touch" 
         subtitle="Visit the sanctuary or reach out for inquiries"
-        backgroundImage="public/images/contact-bg.jpg"
+        backgroundImage="/images/contact-bg.jpg"
       />
       <ContactSection />
     </motion.div>

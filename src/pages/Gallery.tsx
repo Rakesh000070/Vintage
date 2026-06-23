@@ -14,7 +14,7 @@ const Gallery = () => {
       <PageHero 
         title="Gallery" 
         subtitle="Visual proof of our master artistry"
-        backgroundImage="public/images/gallery.png"
+        backgroundImage="/images/gallery.png"
       />
       <GallerySection />
     </motion.div>
