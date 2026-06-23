@@ -14,7 +14,7 @@ const Pricing = () => {
       <PageHero 
         title="Grooming Investment" 
         subtitle="Transparent value for unparalleled excellence"
-        backgroundImage="public/images/pricing-coverphoto.jpg"
+        backgroundImage="public/images/pricing-bg.jpg"
       />
       <PricingSection />
     </motion.div>
