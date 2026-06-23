@@ -132,7 +132,7 @@ const ServiceRow: React.FC<{ service: string; price: string }> = ({ service, pri
 
 export const PricingSection = () => {
   return (
-    <section id="pricing" className="relative py-32 px-6 bg-soft-ivory overflow-hidden">
+    <section id="pricing" className="relative py-32 px-6 bg-soft-ivory overflow-hidden scroll-mt-24">
       {/* Noise Texture Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
       

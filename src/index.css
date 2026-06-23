@@ -6,26 +6,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Vintage Barber Color Palette */
-  --color-soft-ivory: #D8D4D1;
-  --color-warm-greige: #C8C1BB;
-  --color-mushroom-taupe: #B8AFAD;
+  --color-soft-ivory: #F5F2EF;
+  --color-warm-greige: #E8E2DC;
+  --color-mushroom-taupe: #8A817C;
   --color-dusty-mauve: #958A90;
   --color-misty-lavender: #ACA5AE;
   --color-pearl-grey: #D2CED3;
   --color-charcoal: #2B2B2B;
   --color-deep-charcoal: #1E1E1E;
   --color-gold: #C6A46A;
+  --color-gold-light: #D4B888;
+  --color-cream: #FAF8F5;
 
-  /* Typography */
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
+}
 
-  /* Animations */
-  @keyframes ken-burns {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.08); }
-  }
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
 }
 
 @layer base {
@@ -43,7 +42,7 @@
 
   /* Selection style */
   ::selection {
-    @apply bg-dusty-mauve text-white;
+    @apply bg-gold text-deep-charcoal;
   }
 
   /* Custom Scrollbar */

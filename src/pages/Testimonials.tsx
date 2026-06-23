@@ -1,17 +1,23 @@
 import React from "react";
-import { PageHero } from "../components/PageHero";
+import { motion } from "motion/react";
 import { TestimonialsSection } from "../components/TestimonialsSection";
+import { PageHero } from "../components/PageHero";
 
 const Testimonials = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <PageHero 
         title="Client Voices" 
-        subtitle="Trusted by the discerning gentleman"
-        backgroundImage="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=2070"
+        subtitle="What gentlemen say about the Vintage experience"
+        backgroundImage="public/images/testimonials-bg.jpg"
       />
       <TestimonialsSection />
-    </>
+    </motion.div>
   );
 };
 

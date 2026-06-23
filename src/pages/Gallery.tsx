@@ -1,17 +1,23 @@
 import React from "react";
-import { PageHero } from "../components/PageHero";
+import { motion } from "motion/react";
 import { GallerySection } from "../components/GallerySection";
+import { PageHero } from "../components/PageHero";
 
 const Gallery = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <PageHero 
-        title="Visual Journal" 
-        subtitle="A showcase of precision and aesthetic"
-        backgroundImage="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=2070"
+        title="Gallery" 
+        subtitle="Visual proof of our master artistry"
+        backgroundImage="public/images/gallery.png"
       />
       <GallerySection />
-    </>
+    </motion.div>
   );
 };
 

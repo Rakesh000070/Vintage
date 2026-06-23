@@ -1,6 +1,7 @@
 import React from "react";
 import { SectionHeader } from "./SectionHeader";
 import { motion } from "motion/react";
+import { Scissors } from "lucide-react";
 import { TestimonialsColumn } from "./ui/testimonials-columns-1";
 
 const testimonials = [
@@ -66,9 +67,49 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="relative py-32 bg-soft-ivory overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+    <section id="testimonials" className="relative py-32 bg-soft-ivory overflow-hidden selection:bg-gold selection:text-deep-charcoal scroll-mt-24">
+      {/* LUXURY BACKGROUND ENHANCEMENTS */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Ambient Glows */}
+        <div className="absolute top-[20%] left-[-5%] w-[40%] h-[40%] bg-gold/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[20%] right-[-5%] w-[40%] h-[40%] bg-dusty-mauve/5 rounded-full blur-[100px]" />
+        
+        {/* Subtle Barber Motifs (Watermarks) */}
+        <div className="absolute top-1/4 left-10 opacity-[0.03] -rotate-12">
+          <Scissors size={320} strokeWidth={0.5} />
+        </div>
+        <div className="absolute bottom-1/4 right-10 opacity-[0.03] rotate-12">
+          <Scissors size={280} strokeWidth={0.5} />
+        </div>
+
+        {/* Floating Light Particles */}
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-gold/20 rounded-full"
+            initial={{ 
+              x: Math.random() * 100 + "%", 
+              y: Math.random() * 100 + "%",
+              opacity: 0,
+              scale: Math.random() * 0.5 + 0.5
+            }}
+            animate={{ 
+              y: [null, "-20%"],
+              opacity: [0, 0.6, 0],
+              scale: [null, 1.3, 0.7]
+            }}
+            transition={{ 
+              duration: 12 + Math.random() * 10, 
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 5
+            }}
+          />
+        ))}
+
+        {/* Section Border Line */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      </div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div

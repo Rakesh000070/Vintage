@@ -1,17 +1,23 @@
 import React from "react";
-import { PageHero } from "../components/PageHero";
+import { motion } from "motion/react";
 import { ContactSection } from "../components/sections/ContactSection";
+import { PageHero } from "../components/PageHero";
 
 const Contact = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <PageHero 
-        title="Connect" 
-        subtitle="Our concierge team is at your disposal"
-        backgroundImage="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=2074"
+        title="Get In Touch" 
+        subtitle="Visit the sanctuary or reach out for inquiries"
+        backgroundImage="public/images/contact-bg.jpg"
       />
       <ContactSection />
-    </>
+    </motion.div>
   );
 };
 

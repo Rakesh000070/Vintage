@@ -1,35 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Instagram, Facebook, Twitter, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Experts", href: "#experts" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Experts", href: "/experts" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const services = [
-    { name: "Hair Styling", href: "#services" },
-    { name: "Hair Coloring", href: "#services" },
-    { name: "Bridal Makeup", href: "#services" },
-    { name: "Hair Treatments", href: "#services" },
-    { name: "Skin Care", href: "#services" },
-    { name: "Spa Services", href: "#services" },
+    { name: "Hair Styling", href: "/services" },
+    { name: "Hair Coloring", href: "/services" },
+    { name: "Bridal Makeup", href: "/services" },
+    { name: "Hair Treatments", href: "/services" },
+    { name: "Skin Care", href: "/services" },
+    { name: "Spa Services", href: "/services" },
   ];
-
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -79,14 +72,13 @@ export const Footer: React.FC = () => {
             <h3 className="font-body text-xs tracking-[0.2em] uppercase text-white mb-8">Quick Links</h3>
             <div className="grid grid-cols-1 gap-3">
               {quickLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleScroll(e, link.href)}
+                  to={link.href}
                   className="font-body text-sm text-white/50 hover:text-[#958A90] transition-colors duration-300 w-fit"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
@@ -96,14 +88,13 @@ export const Footer: React.FC = () => {
             <h3 className="font-body text-xs tracking-[0.2em] uppercase text-white mb-8">Our Services</h3>
             <div className="grid grid-cols-1 gap-3">
               {services.map((service) => (
-                <a
+                <Link
                   key={service.name}
-                  href={service.href}
-                  onClick={(e) => handleScroll(e, service.href)}
+                  to={service.href}
                   className="font-body text-sm text-white/50 hover:text-[#958A90] transition-colors duration-300 w-fit"
                 >
                   {service.name}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
@@ -161,8 +152,8 @@ export const Footer: React.FC = () => {
               © 2024 VINTAGE BARBER. All rights reserved. Crafted by Excellence.
             </p>
             <div className="flex gap-8">
-              <a href="#" className="font-body text-xs text-white/30 hover:text-white/60 transition-colors uppercase tracking-widest">Privacy Policy</a>
-              <a href="#" className="font-body text-xs text-white/30 hover:text-white/60 transition-colors uppercase tracking-widest">Terms of Service</a>
+              <Link to="/privacy" className="font-body text-xs text-white/30 hover:text-white/60 transition-colors uppercase tracking-widest">Privacy Policy</Link>
+              <Link to="/terms" className="font-body text-xs text-white/30 hover:text-white/60 transition-colors uppercase tracking-widest">Terms of Service</Link>
             </div>
           </div>
         </motion.div>

@@ -142,7 +142,7 @@ export const GallerySection = () => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
   return (
-    <section id="gallery" className="py-32 px-6 bg-white overflow-hidden">
+    <section id="gallery" className="py-32 px-6 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <SectionHeader 
           title="Transformation Gallery"

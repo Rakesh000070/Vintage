@@ -2,16 +2,17 @@ import React from "react";
 import { SectionHeader } from "./SectionHeader";
 import { Button } from "./Button";
 import { motion } from "motion/react";
+import { PageHero } from "./PageHero";
 
-export const BookingSection = () => {
+export const BookingSectionContent = () => {
   return (
-    <section id="booking" className="py-24 bg-soft-ivory">
+    <section id="booking" className="py-24 bg-soft-ivory scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row bg-white rounded-sm shadow-2xl overflow-hidden">
           {/* Visual Column */}
           <div className="lg:w-2/5 relative min-h-[400px]">
             <img 
-              src="https://images.unsplash.com/photo-1593702275677-f916c8c99f10?auto=format&fit=crop&q=80&w=2070" 
+              src="public/images/contact-bg.jpeg" 
               alt="Booking Visual" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -22,7 +23,7 @@ export const BookingSection = () => {
                 </h3>
                 <div className="w-12 h-px bg-gold mx-auto" />
                 <p className="text-white/70 text-sm font-light uppercase tracking-widest">
-                  Maison Élégance
+                  Vintage Barber
                 </p>
               </div>
             </div>
@@ -97,3 +98,18 @@ export const BookingSection = () => {
     </section>
   );
 };
+
+export const BookingSection = () => {
+  return (
+    <>
+      <PageHero 
+        title="Reservations" 
+        subtitle="Begin your journey to refined grooming"
+        backgroundImage="https://images.unsplash.com/photo-1593702275677-f916c8c99f10?auto=format&fit=crop&q=80&w=2070"
+      />
+      <BookingSectionContent />
+    </>
+  );
+};
+
+export default BookingSection;

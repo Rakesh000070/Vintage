@@ -132,7 +132,7 @@ const ExpertCard: React.FC<{ expert: Expert; delay: number }> = ({ expert, delay
 
 export const ExpertsSection = () => {
   return (
-    <section id="experts" className="py-32 bg-white px-6 overflow-hidden">
+    <section id="experts" className="py-32 bg-white px-6 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title="Meet Our Experts"

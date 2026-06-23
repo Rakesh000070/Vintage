@@ -5,7 +5,6 @@ import { Button } from "../Button";
 import { ServicesSection } from "../ServicesSection";
 import { AboutSection } from "../AboutSection";
 import { TestimonialsSection } from "../TestimonialsSection";
-import { BookingSection } from "../BookingSection";
 import { BorderRotate } from "../ui/animated-gradient-border";
 
 const LUXURY_EASE_OUT = [0.25, 0.1, 0.25, 1];
@@ -54,7 +53,7 @@ export const HeroSection: React.FC = () => {
       {/* 1. Fullscreen Video Hero */}
       <section 
         id="home" 
-        className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-deep-charcoal"
+        className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-deep-charcoal scroll-mt-24"
       >
         {/* Video Background */}
         <motion.div 
@@ -219,7 +218,7 @@ export const HeroSection: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-heading text-charcoal leading-tight"
           >
-            The Pinnacle of <br /> Masculine Elegance
+            The Pinnacle of <br /> vintage Barber
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -228,7 +227,7 @@ export const HeroSection: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-mushroom-taupe leading-relaxed text-xl font-light max-w-3xl mx-auto"
           >
-            Located in the heart of London since 1892, Vintage Barber has served 
+            Located in the heart of Brahmapur since 1892, Vintage Barber has served 
             generations of gentlemen with a commitment to precision, tradition, 
             and modern artistry. We don't just cut hair; we curate identities.
           </motion.p>
@@ -299,7 +298,7 @@ export const HeroSection: React.FC = () => {
              >
                 <div className="aspect-[4/5] rounded-sm overflow-hidden relative z-10 shadow-2xl">
                    <img 
-                     src="https://images.unsplash.com/photo-1512690118294-7043896655c6?auto=format&fit=crop&q=80&w=1287" 
+                     src="/images/Homepage.jpeg" 
                      alt="Craftsmanship" 
                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                      referrerPolicy="no-referrer"
@@ -353,10 +352,6 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Internal Content Components */}
-      <ServicesSection />
-      <AboutSection />
     </div>
   );
 };

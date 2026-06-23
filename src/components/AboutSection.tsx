@@ -43,131 +43,139 @@ export const AboutSection = () => {
       id="about" 
       className="py-32 px-6 bg-white relative overflow-hidden"
     >
-      {/* Subtle Texture/Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-soft-ivory/50 to-transparent pointer-events-none" />
+      {/* Background Image Layer */}
       <div 
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{ 
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+        className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none transition-opacity duration-1000"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=2074')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       />
+      
+      {/* Subtle Texture/Gradient Overlay */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.03] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-soft-ivory/30 -skew-x-12 translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           
-          {/* Left Column: Content */}
+          {/* Left Column: Visual Storytelling (5 cols) */}
           <motion.div
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col"
+            className="lg:col-span-5 relative"
           >
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-dusty-mauve mb-6 block">
-              OUR STORY
-            </span>
-            
-            <h2 className="font-heading text-4xl md:text-5xl text-charcoal leading-tight">
-              Where Timeless Craftsmanship <br className="hidden md:block" /> Meets Modern Beauty
-            </h2>
-            
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-              className="w-16 h-0.5 bg-dusty-mauve mt-8 origin-left"
-            />
+            <div className="relative group">
+              {/* Main Image Container */}
+              <div className="relative z-10 rounded-sm overflow-hidden shadow-[30px_30px_0px_0px_rgba(184,175,173,0.1)] transition-transform duration-700 group-hover:shadow-[40px_40px_0px_0px_rgba(184,175,173,0.15)]">
+                <img 
+                  src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=2070" 
+                  alt="Vintage Barber Mastercourse"
+                  className="w-full h-[600px] object-cover scale-105 transition-transform duration-1000 group-hover:scale-100"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-deep-charcoal/10" />
+              </div>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-8 space-y-8"
-            >
-              <motion.p
-                variants={fadeUpVariant}
-                className="font-body text-mushroom-taupe text-lg leading-relaxed font-light"
+              {/* Floating Stat Card */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute -bottom-10 -right-10 md:right-10 z-20 bg-white p-8 shadow-2xl border border-soft-ivory max-w-[240px]"
               >
-                Founded with a passion for excellence, Vintage Barber is more than a salon — 
-                it's a sanctuary where artistry and precision converge. We believe that true 
-                beauty lies in the details, and every service we offer reflects our 
-                unwavering commitment to quality.
-              </motion.p>
-              
-              <motion.p
-                variants={fadeUpVariant}
-                className="font-body text-mushroom-taupe text-lg leading-relaxed font-light"
-              >
-                Our team of seasoned professionals brings years of international experience 
-                to every appointment, ensuring that each visit is a personalized journey 
-                toward looking and feeling your absolute best.
-              </motion.p>
-            </motion.div>
+                <div className="flex flex-col gap-2">
+                  <span className="font-heading text-5xl text-gold">1892</span>
+                  <span className="font-body text-[10px] tracking-[0.3em] uppercase text-mushroom-taupe/80 leading-relaxed">
+                    Established Excellence in the Heart of Brahmapur
+                  </span>
+                </div>
+              </motion.div>
 
-            {/* Stats Row */}
-            <div className="flex flex-wrap gap-12 mt-12">
-              <StatItem number="10+" label="Years" />
-              <StatItem number="5000+" label="Clients" />
-              <StatItem number="15+" label="Experts" />
-            </div>
-
-            <div className="mt-12">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-charcoal/20 text-charcoal hover:bg-charcoal hover:text-white transition-all uppercase tracking-widest text-[10px]"
-              >
-                Discover Our Story
-              </Button>
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -left-6 w-24 h-24 border-l border-t border-gold/30" />
             </div>
           </motion.div>
 
-          {/* Right Column: Images */}
+          {/* Right Column: Narrative (7 cols) */}
           <motion.div
             variants={slideInRight}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="relative"
+            className="lg:col-span-7 lg:pl-16 flex flex-col"
           >
-            {/* Main Image with GlowCard */}
-            <div className="relative z-10">
-              <GlowCard 
-                glowColor="purple" 
-                customSize 
-                className="bg-transparent border-0 rounded-sm overflow-hidden shadow-2xl shadow-mushroom-taupe/20 inline-block p-0"
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <motion.span 
+                  className="font-body text-xs tracking-[0.3em] uppercase text-gold font-semibold flex items-center gap-4"
+                >
+                  <span className="w-8 h-px bg-gold/30" />
+                  THE SANCTUARY OF STYLE
+                </motion.span>
+                
+                <h2 className="font-heading text-4xl md:text-6xl text-deep-charcoal leading-[1.1] tracking-tight">
+                  Where Heritage <br />
+                  <span className="text-mushroom-taupe italic">Meets Modern Artistry</span>
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-4">
+                <motion.div variants={fadeUpVariant} className="space-y-4">
+                  <h3 className="font-heading text-xl text-deep-charcoal tracking-wide uppercase">Our Heritage</h3>
+                  <p className="font-body text-mushroom-taupe leading-relaxed text-sm font-light">
+                    Founded in 1892, Vintage Barber has served generations of gentlemen with a commitment to precision. We carry the soul of traditional grooming into the modern age.
+                  </p>
+                </motion.div>
+
+                <motion.div variants={fadeUpVariant} className="space-y-4 text-deep-charcoal">
+                  <h3 className="font-heading text-xl tracking-wide uppercase">Our Philosophy</h3>
+                  <p className="font-body text-mushroom-taupe leading-relaxed text-sm font-light">
+                    We don't just cut hair; we curate identities. Every stroke of the blade and every custom blend is a tribute to the individual refinement of our clients.
+                  </p>
+                </motion.div>
+              </div>
+
+              <motion.div 
+                variants={staggerContainer}
+                className="flex flex-wrap items-center gap-10 pt-8"
               >
-                <div className="aspect-[3/4] w-full h-full">
-                  <img 
-                    src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=2070" 
-                    alt="Luxury Salon Interior"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="flex flex-col">
+                  <span className="font-heading text-3xl text-deep-charcoal">30k+</span>
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-mushroom-taupe/60">Grooming Mastered</span>
                 </div>
-              </GlowCard>
+                <div className="w-px h-12 bg-soft-ivory hidden sm:block" />
+                <div className="flex flex-col">
+                  <span className="font-heading text-3xl text-deep-charcoal">15</span>
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-mushroom-taupe/60">Master Artisans</span>
+                </div>
+                <div className="w-px h-12 bg-soft-ivory hidden sm:block" />
+                <div className="flex flex-col">
+                  <span className="font-heading text-3xl text-deep-charcoal">9+</span>
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-mushroom-taupe/60">Decades of Legacy</span>
+                </div>
+              </motion.div>
+
+              <div className="pt-10 flex flex-col sm:flex-row items-center gap-8">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-deep-charcoal/10 text-deep-charcoal hover:bg-deep-charcoal hover:text-white transition-all duration-700 uppercase tracking-widest text-[10px] w-full sm:w-auto"
+                >
+                  The Full Experience
+                </Button>
+                
+                <div className="flex items-center gap-4 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer">
+                  <span className="font-heading text-lg tracking-widest text-deep-charcoal">Vintage Barber</span>
+                  <span className="font-body text-[10px] uppercase tracking-tighter text-mushroom-taupe italic">Signature Selection</span>
+                </div>
+              </div>
             </div>
-
-            {/* Accent Image */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8, x: 20, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="absolute -bottom-12 -right-12 z-20 w-40 md:w-48 aspect-square rounded-sm overflow-hidden border-4 border-white shadow-xl"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1553521042-880643206e94?auto=format&fit=crop&q=80&w=1000" 
-                alt="Salon Detail"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-
-            {/* Decorative Gold Border */}
-            <div className="absolute -top-6 -left-6 w-full h-full border border-dusty-mauve/30 -z-10 translate-x-3 translate-y-3" />
           </motion.div>
 
         </div>
