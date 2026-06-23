@@ -12,7 +12,7 @@ export const BookingSectionContent = () => {
           {/* Visual Column */}
           <div className="lg:w-2/5 relative min-h-[400px]">
             <img 
-              src="public/images/contact-bg.jpeg" 
+              src="public/images/contact.jpg" 
               alt="Booking Visual" 
               className="absolute inset-0 w-full h-full object-cover"
             />
