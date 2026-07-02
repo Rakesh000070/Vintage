@@ -78,8 +78,8 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-10">
-            <ul className="flex gap-10">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
+            <ul className="flex gap-4 xl:gap-10">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.href;
 
@@ -138,7 +138,7 @@ export const Navbar = () => {
           {/* Mobile Toggle */}
           <button 
             onClick={() => setIsOpen(true)}
-            className={`xl:hidden transition-colors duration-500 ${
+            className={`lg:hidden transition-colors duration-500 ${
               scrolled || !isHome ? "text-charcoal" : "text-white"
             }`}
           >

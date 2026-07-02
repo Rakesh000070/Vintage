@@ -85,7 +85,7 @@ export const ImageComparison: React.FC<ImageComparisonProps> = ({
     <div 
       ref={containerRef}
       className={cn(
-        "relative w-full overflow-hidden cursor-ew-resize select-none touch-none",
+        "relative w-full overflow-hidden cursor-ew-resize select-none touch-pan-y",
         className
       )}
       style={{ aspectRatio }}

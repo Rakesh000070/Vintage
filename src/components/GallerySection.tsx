@@ -184,7 +184,7 @@ export const GallerySection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-6 md:p-12"
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-start md:items-center justify-center p-4 md:p-12 overflow-y-auto"
             onClick={() => setSelectedItem(null)}
           >
             <button 
